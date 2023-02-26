@@ -1,7 +1,9 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, Image, View} from 'react-native';
+import {useAssets} from '../../hooks/useAssets';
 
 function SignInScreen() {
+  const assets = useAssets;
   return (
     <View
       style={{
@@ -9,6 +11,7 @@ function SignInScreen() {
         justifyContent: 'center',
       }}>
       <Text style={{textAlign: 'center'}}>SignIn</Text>
+      <Image source={assets('logo')} />
     </View>
   );
 }
