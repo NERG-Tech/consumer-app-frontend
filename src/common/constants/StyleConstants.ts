@@ -47,6 +47,8 @@ export const COLORS = {
   INFO_MORNING: '#F4F4F6',
   INFO_AFTERNOON: '#D3D5DA',
   INFO_NIGHT: '#E5E6EB',
+  SHAPE: '#E1E1E8',
+  SHAPE_DARK: '#29292E',
   TRANSPARENT: 'transparent',
   WHITE: '#FFF',
   WHITE_ALPHA: 'rgba(255, 255, 255, 0.5)',
