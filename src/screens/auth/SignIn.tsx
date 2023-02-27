@@ -36,14 +36,6 @@ const styles = StyleSheet.create({
   signInBtnWrapper: {
     width: wp(60),
     height: RFValue(58),
-    borderRadius: RFValue(50),
-    borderWidth: RFValue(1),
-    borderColor: COLORS.BORDER_ALPHA_LIGHT,
-    elevation: 2,
-    shadowOpacity: 1,
-    shadowRadius: 4,
-    shadowColor: COLORS.BLACK_ALPHA,
-    shadowOffset: {width: 2, height: 2},
   },
   orderBtnWrapper: {
     flexDirection: 'row',
