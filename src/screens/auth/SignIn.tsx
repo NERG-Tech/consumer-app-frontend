@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: hp(6),
-    paddingBottom: hp(4),
+    paddingTop: hp(8),
+    paddingBottom: hp(6),
   },
   logo: {
     width: wp(60),
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     color: COLORS.BLACK,
   },
   watchLogo: {
-    width: wp(60),
+    width: wp(55),
     resizeMode: 'contain',
   },
   signInBtnWrapper: {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: RFValue(10),
     paddingHorizontal: RFValue(20),
-    marginTop: RFValue(30),
+    marginTop: RFValue(60),
     borderRadius: RFValue(50),
     backgroundColor: COLORS.WHITE_ALPHA,
   },
