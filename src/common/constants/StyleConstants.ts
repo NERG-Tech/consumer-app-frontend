@@ -1,3 +1,5 @@
+import {RFValue} from 'react-native-responsive-fontsize';
+
 export const COLORS = {
   BACKGROUND: '#F2F2F2',
   BACKGROUND_DARK: '#101011',
@@ -78,11 +80,11 @@ export const FONT_WEIGHT = {
 } as const;
 
 export const FONT_SIZE = {
-  XXS: 10,
-  XS: 12,
-  MS: 14,
-  MD: 16,
-  L: 20,
-  XL: 22,
-  XXL: 24,
+  XXS: RFValue(10),
+  XS: RFValue(12),
+  MS: RFValue(14),
+  MD: RFValue(16),
+  L: RFValue(20),
+  XL: RFValue(22),
+  XXL: RFValue(24),
 } as const;

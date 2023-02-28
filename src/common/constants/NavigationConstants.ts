@@ -1,6 +1,6 @@
 // APP NAVIGATOR
 export const WELCOME = 'welcome';
-export const LOGIN = 'login';
+export const SIGN_IN = 'sign_in';
 export const REGISTER = 'register';
 export const FORGOT_PASSWORD = 'forgot_password';
 

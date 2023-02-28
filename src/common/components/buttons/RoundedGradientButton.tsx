@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: FONT_WEIGHT.LIGHT,
-    fontSize: RFValue(FONT_SIZE.XL),
+    fontSize: FONT_SIZE.L,
     color: COLORS.WHITE,
   },
 });

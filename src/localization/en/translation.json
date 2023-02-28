@@ -1,1 +1,27 @@
-{}
+{
+  "general": {
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "email": "E-mail",
+    "password": "Password",
+    "search": "Search"
+  },
+  "app": {
+    "dashboard": "Dashboard",
+    "gmMode": "GM Mode",
+    "coachMode": "Coach Mode",
+    "addPlayer": "Add Player",
+    "invite": "Invite",
+    "editProfile": "Edit Profile",
+    "privacyPolicy": "Privacy Policy",
+    "settings": "Settings",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "register": "Sign Up",
+    "forgotPassword": "Forgot password"
+  }
+}

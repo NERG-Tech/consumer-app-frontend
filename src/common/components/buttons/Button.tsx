@@ -25,6 +25,7 @@ interface RectPropsI extends RectButtonProps {
 export function RectButton({
   children,
   onPress,
+  underlayColor,
   enabled = true,
   loading = false,
   customStyle,
@@ -33,6 +34,7 @@ export function RectButton({
     <RNRectButton
       onPress={onPress}
       enabled={enabled}
+      underlayColor={underlayColor}
       style={StyleSheet.flatten([
         styles.container,
         customStyle,
