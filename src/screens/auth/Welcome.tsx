@@ -9,7 +9,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {useAssets} from '../../hooks/useAssets';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../common/constants/StyleConstants';
-import {RectButton, GradientButton} from '../../common/components';
+import {RectButton, RoundedGradientButton} from '../../common/components';
 import {AuthStackParamList} from '../../navigation/AuthStack';
 import {useNavigation} from '@react-navigation/native';
 import {SIGN_IN} from '../../common/constants/NavigationConstants';
@@ -75,7 +75,7 @@ function WelcomeScreen() {
         <Image style={styles.logo} source={assets('logo')} />
         <Text style={styles.stasticText}>Outperform your genetics.</Text>
         <Image style={styles.watchLogo} source={assets('watch_logo')} />
-        <GradientButton
+        <RoundedGradientButton
           label={t('app.signIn')}
           onPress={() => navigation.navigate(SIGN_IN)}
           startColor={COLORS.BLUE}
