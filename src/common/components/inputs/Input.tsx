@@ -53,7 +53,7 @@ export function Input({
   const [isClear, setIsClear] = useState(false);
 
   useEffect(() => {
-    if (isFocused && !!value) {
+    if (!!value && isFocused) {
       setIsClear(true);
     } else {
       setIsClear(false);

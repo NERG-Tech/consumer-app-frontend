@@ -78,14 +78,16 @@ export function PasswordInput({
         placeholderTextColor={placeholderTextColor || COLORS.TEXT_GREY_LIGHT}
         style={StyleSheet.flatten([styles.input, textStyle])}
       />
-      <Button customStyle={styles.eyeBtn} onPress={handlePasswordVisibilityChange}>
-        <Icon
-          type="feather"
-          name={isPasswordVisible ? 'eye' : 'eye-off'}
-          color={COLORS.TEXT_GREY_LIGHT}
-          size={RFValue(16)}
-        />
-      </Button>
+      {!!value && (
+        <Button customStyle={styles.eyeBtn} onPress={handlePasswordVisibilityChange}>
+          <Icon
+            type="feather"
+            name={isPasswordVisible ? 'eye' : 'eye-off'}
+            color={COLORS.TEXT_GREY_LIGHT}
+            size={RFValue(16)}
+          />
+        </Button>
+      )}
     </View>
   );
 }

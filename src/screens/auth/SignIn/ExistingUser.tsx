@@ -91,7 +91,8 @@ function ExistingUserScreen() {
       await signIn({email, password});
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
-        Alert.alert('Oops!', 'Please fill all required fileds..');
+        console.log(error);
+        Alert.alert('Oops!', error.message);
       } else {
         Alert.alert(
           'Authentication Error',

@@ -116,7 +116,8 @@ function SignInScreen() {
           }}
           contentContainerStyle={{
             flexGrow: 1,
-          }}>
+          }}
+          keyboardShouldPersistTaps={'handled'}>
           <View style={styles.container}>
             <View style={styles.upSideWrapper}>
               <Image style={styles.logo} source={assets('logo')} />
