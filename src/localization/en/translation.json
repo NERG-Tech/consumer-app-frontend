@@ -22,6 +22,10 @@
     "signIn": "Sign In",
     "signOut": "Sign Out",
     "register": "Sign Up",
-    "forgotPassword": "Forgot password"
+    "forgotPassword": "Forgot password",
+    "remember": "Remember my info",
+    "existingUser": "Existing User",
+    "newUser": "New User",
+    "connect": "Connect"
   }
 }

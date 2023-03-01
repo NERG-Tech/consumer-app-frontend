@@ -2,6 +2,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 
 export const COLORS = {
   BACKGROUND: '#F2F2F2',
+  BACKGROUND_LIGHT: '##FCFDFF',
   BACKGROUND_DARK: '#101011',
   BACKGROUND_GREY: '#2C2C2E',
   BACKGROUND_GREY_LIGHT: '#636F73',

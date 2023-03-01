@@ -41,7 +41,7 @@ interface PropsI extends RectButtonProps {
   textStyle?: TextStyle;
 }
 
-export function GradientButton({
+export function RoundedGradientButton({
   label,
   startColor,
   endColor,

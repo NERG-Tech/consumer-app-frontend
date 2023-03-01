@@ -1,13 +1,13 @@
 import React, {createContext, useState, useContext, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {TAuthData, authService} from '../services/authService';
+import {TAuthData, TLoginWithEmail, authService} from '../services/authService';
 
 type AuthContextData = {
   authData?: TAuthData;
   loading: boolean;
   setLoading(isLoading: boolean): void;
-  signIn(email: string, password: string): Promise<void>;
+  signIn({email, password}: TLoginWithEmail): Promise<void>;
   signOut(): void;
   errors?: string;
 };
@@ -45,8 +45,9 @@ const AuthProvider = ({children}: {children: any}) => {
     }
   }
 
-  const signIn = async (email: string, password: string) => {
+  const signIn = async ({email, password}: TLoginWithEmail) => {
     try {
+      setLoading(true);
       // call the service passing credential (email and password).
       // In a real App this data will be provided by the user from some InputText components.
       const _authData = await authService.loginWithEmail({email, password});
@@ -62,8 +63,8 @@ const AuthProvider = ({children}: {children: any}) => {
       // to be recovered in the next user session.
       AsyncStorage.setItem('@AuthData', JSON.stringify(_authData));
     } catch (error) {
-      setErrors('User not found..');
-      console.log('log in err: ', error);
+      console.log('sign in err: ', error);
+      throw error;
     } finally {
       // loading finished
       setLoading(false);
