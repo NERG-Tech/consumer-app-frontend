@@ -8,6 +8,10 @@ const CheckEmpty = require('../assets/img/hoc/check_empty.png');
 const CheckNormal = require('../assets/img/hoc/check_normal.png');
 const CheckActive = require('../assets/img/hoc/check_active.png');
 
+const CircleLeft = require('../assets/img/hoc/circle_left.png');
+const CircleRight = require('../assets/img/hoc/circle_right.png');
+const CircleDown = require('../assets/img/hoc/circle_down.png');
+
 const HomeActiveTab = require('../assets/img/tabs/home_active.png');
 const HomeNormalTab = require('../assets/img/tabs/home_normal.png');
 const ShareActiveTab = require('../assets/img/tabs/share_active.png');
@@ -45,6 +49,12 @@ export function useAssets(type: string) {
       return Email;
     case 'setting':
       return Setting;
+    case 'circle_left':
+      return CircleLeft;
+    case 'circle_right':
+      return CircleRight;
+    case 'circle_down':
+      return CircleDown;
     default:
       return null;
   }
