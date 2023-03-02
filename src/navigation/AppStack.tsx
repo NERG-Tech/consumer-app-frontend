@@ -43,6 +43,7 @@ export function AppStack() {
         component={TabStack}
         options={({navigation}) => ({
           headerStyle: {...DefaultTheme.headerStyle},
+          headerTitleAlign: 'center',
           headerTitle: () => <HeaderLogo />,
           headerLeft: () => <GoToSetting navigation={navigation} />,
           headerRight: () => <GoToEmail navigation={navigation} />,
