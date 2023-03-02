@@ -4,12 +4,23 @@ export const SIGN_IN = 'sign_in';
 export const REGISTER = 'register';
 export const FORGOT_PASSWORD = 'forgot_password';
 
+// SCREEN NAVIGATOR
+export const HOME_SCREEN = 'home_screen';
+export const SHARE_SCREEN = 'share_screen';
+export const FOCUS_SCREEN = 'focus_screen';
+
 // MAIN NAVIGATOR
-export const HOME = 'home';
 export const HEALTH = 'health';
+export const SETTINGS = 'settings';
 export const NOTIFICATIONS = 'notifications';
+export const FOOD_JOURNAL = 'food_journal';
+export const REST_JOURNAL = 'rest_journal';
+export const HYDRATION_JOURNAL = 'hydration_journal';
+export const PRODUCT_SEARCH = 'product_search';
+export const AUTO_MONITOR_HEALTH = 'auto_monitor_health';
 
 // BOTTOM TAB NAVIGATOR
+export const HOME = 'home';
 export const HOME_TAB = 'home_tab';
 export const SHARE_TAB = 'share_tab';
 export const FOCUS_TAB = 'focus_tab';

@@ -28,5 +28,19 @@
     "existingUser": "Existing User",
     "newUser": "New User",
     "connect": "Connect"
+  },
+  "navigation": {
+    "settings": "My Settings",
+    "notifications": "Notifications",
+    "health": "Your Health",
+    "amh": "Auto Monitor Health",
+    "mr": "Manage Reminders",
+    "hj": "Hydration Journal",
+    "fj": "Food Journal",
+    "aj": "Activity Journal",
+    "rj": "Rest Journal",
+    "ps": "Product Search",
+    "hr": "Heart Rate",
+    "li": "Log Insight"
   }
 }
