@@ -42,5 +42,11 @@
     "ps": "Product Search",
     "hr": "Heart Rate",
     "li": "Log Insight"
+  },
+  "home": {
+    "htc": "Hydration To Consume",
+    "ctc": "Calories To Consume",
+    "ha": "Healthy Activity",
+    "rt": "Rejuvenating Time"
   }
 }

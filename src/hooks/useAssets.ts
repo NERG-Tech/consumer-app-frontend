@@ -19,6 +19,11 @@ const ShareNormalTab = require('../assets/img/tabs/share_normal.png');
 const FocusActiveTab = require('../assets/img/tabs/focus_active.png');
 const FocusNormalTab = require('../assets/img/tabs/focus_normal.png');
 
+const DefaultPlayer = require('../assets/img/player.png');
+const LungsImage = require('../assets/img/lungs.png');
+const ArrowUpImage = require('../assets/img/arrow_up.png');
+const AddListImage = require('../assets/img/list_add.png');
+
 export function useAssets(type: string) {
   switch (type) {
     case 'background':
@@ -55,6 +60,14 @@ export function useAssets(type: string) {
       return CircleRight;
     case 'circle_down':
       return CircleDown;
+    case 'player':
+      return DefaultPlayer;
+    case 'lungs':
+      return LungsImage;
+    case 'arrow_up':
+      return ArrowUpImage;
+    case 'list_add':
+      return AddListImage;
     default:
       return null;
   }
