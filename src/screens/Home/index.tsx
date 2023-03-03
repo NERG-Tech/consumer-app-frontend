@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {Text, Image, View, ScrollView, StyleSheet} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {RFValue} from 'react-native-responsive-fontsize';
@@ -6,7 +6,7 @@ import {Button} from '../../common/components';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../common/constants/StyleConstants';
 import {useAssets} from '../../hooks/useAssets';
 
-import {DailyTargets} from './sections';
+import {DailyTargets, WeeklyProgress} from './sections';
 
 const tabs = {
   dailyTargets: 'Daily Targets',
@@ -97,38 +97,51 @@ const styles = StyleSheet.create({
 });
 
 function HomeScreen() {
-  const assets = useAssets;
   const [activeTab, setActiveTab] = useState('dailyTargets');
+  const scrollRef = useRef<ScrollView>(null);
+  const assets = useAssets;
   const {t} = useTranslation();
 
+  useEffect(() => gotoScrollViewTop(), [activeTab]);
+
+  const gotoScrollViewTop = () => {
+    scrollRef.current?.scrollTo({
+      y: 0,
+      animated: true,
+    });
+  };
+
   return (
-    <ScrollView style={styles.scrollViewContainer} showsVerticalScrollIndicator={false}>
-      <View style={styles.container}>
-        <View style={styles.playerHelloWrapper}>
-          <Image style={styles.playerAvatar} source={assets('player')} />
-          <View style={styles.infoWrapper}>
-            <Text style={styles.infoText}>
-              Hello <Text style={styles.infoTextSpan}>Julieta</Text>
-            </Text>
-            <Text style={styles.infoText}>How are you feeling?</Text>
-          </View>
-          <Button onPress={() => console.log('Lungs')}>
-            <Image style={styles.lungWrapper} source={assets('lungs')} />
-          </Button>
+    <View style={styles.container}>
+      <View style={styles.playerHelloWrapper}>
+        <Image style={styles.playerAvatar} source={assets('player')} />
+        <View style={styles.infoWrapper}>
+          <Text style={styles.infoText}>
+            Hello <Text style={styles.infoTextSpan}>Julieta</Text>
+          </Text>
+          <Text style={styles.infoText}>How are you feeling?</Text>
         </View>
-
-        <View style={styles.tabsWrapper}>
-          {Object.keys(tabs).map((tab: string, i: number) => (
-            <Button key={i} customStyle={styles.tabWrapper} onPress={() => setActiveTab(tab)}>
-              <Text style={styles.tabText}>{tabs[tab]}</Text>
-              <View style={activeTab === tab ? styles.tabActiveBottom : styles.tabBottom} />
-            </Button>
-          ))}
-        </View>
-
-        {activeTab === 'dailyTargets' ? <DailyTargets /> : <DailyTargets />}
+        <Button onPress={() => console.log('Lungs')}>
+          <Image style={styles.lungWrapper} source={assets('lungs')} />
+        </Button>
       </View>
-    </ScrollView>
+
+      <View style={styles.tabsWrapper}>
+        {Object.keys(tabs).map((tab: string, i: number) => (
+          <Button key={i} customStyle={styles.tabWrapper} onPress={() => setActiveTab(tab)}>
+            <Text style={styles.tabText}>{tabs[tab]}</Text>
+            <View style={activeTab === tab ? styles.tabActiveBottom : styles.tabBottom} />
+          </Button>
+        ))}
+      </View>
+
+      <ScrollView
+        ref={scrollRef}
+        style={styles.scrollViewContainer}
+        showsVerticalScrollIndicator={false}>
+        {activeTab === 'dailyTargets' ? <DailyTargets /> : <WeeklyProgress />}
+      </ScrollView>
+    </View>
   );
 }
 
