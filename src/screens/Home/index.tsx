@@ -1,6 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {Text, Image, View, ScrollView, StyleSheet} from 'react-native';
-import {useTranslation} from 'react-i18next';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {Button} from '../../common/components';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../common/constants/StyleConstants';
@@ -100,7 +99,6 @@ function HomeScreen() {
   const [activeTab, setActiveTab] = useState('dailyTargets');
   const scrollRef = useRef<ScrollView>(null);
   const assets = useAssets;
-  const {t} = useTranslation();
 
   useEffect(() => gotoScrollViewTop(), [activeTab]);
 

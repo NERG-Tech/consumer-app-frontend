@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import {
   TouchableOpacity,
   ActivityIndicator,
@@ -52,12 +52,20 @@ interface OpacityPropsI {
   customStyle?: ViewStyle;
 }
 
-export const Button = ({children, onPress, loading = false, customStyle}: OpacityPropsI) => (
-  <TouchableOpacity
-    onPress={onPress}
-    style={StyleSheet.flatten([styles.container, customStyle])}
-    activeOpacity={0.65}
-    hitSlop={{top: 20, left: 20, bottom: 20, right: 20}}>
-    {loading ? <ActivityIndicator color={COLORS.SHAPE} /> : children}
-  </TouchableOpacity>
+export const Button = forwardRef(
+  (
+    {children, onPress, loading = false, customStyle}: OpacityPropsI,
+    ref?: React.Ref<TouchableOpacity>,
+  ) => {
+    return (
+      <TouchableOpacity
+        ref={ref}
+        onPress={onPress}
+        style={StyleSheet.flatten([styles.container, customStyle])}
+        activeOpacity={0.65}
+        hitSlop={{top: 20, left: 20, bottom: 20, right: 20}}>
+        {loading ? <ActivityIndicator color={COLORS.SHAPE} /> : children}
+      </TouchableOpacity>
+    );
+  },
 );

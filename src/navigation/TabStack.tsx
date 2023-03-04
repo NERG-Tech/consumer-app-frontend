@@ -45,6 +45,7 @@ export function TabStack() {
           height: RFValue(80),
           backgroundColor: COLORS.BLACK_MIDDLE,
         },
+        tabBarHideOnKeyboard: true,
       }}
       initialRouteName={HOME_TAB}>
       <Screen
