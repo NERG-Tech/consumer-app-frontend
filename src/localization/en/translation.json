@@ -47,6 +47,8 @@
     "htc": "Hydration To Consume",
     "ctc": "Calories To Consume",
     "ha": "Healthy Activity",
-    "rt": "Rejuvenating Time"
+    "rt": "Rejuvenating Time",
+    "weight": "Weight",
+    "waistC": "Waist Circumference"
   }
 }

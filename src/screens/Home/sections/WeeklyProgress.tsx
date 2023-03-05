@@ -8,11 +8,29 @@ import {
 import {RFValue} from 'react-native-responsive-fontsize';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../../common/constants/StyleConstants';
 import {useAssets} from '../../../hooks/useAssets';
-import {AttributeInput, AttributeSelect} from '../../../common/components';
+import {AttributeInput} from '../../../common/components';
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
+  },
+  topInputsWrapper: {
+    flexDirection: 'column',
+    marginTop: RFValue(12),
+    marginBottom: RFValue(40),
+  },
+  topTitle: {
+    fontWeight: FONT_WEIGHT.LIGHT,
+    fontSize: FONT_SIZE.L,
+    color: COLORS.TEXT_DARK,
+    textAlign: 'center',
+  },
+  topRowWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: RFValue(16),
+    marginTop: RFValue(24),
   },
 });
 
@@ -20,46 +38,28 @@ export function WeeklyProgress() {
   const {t} = useTranslation();
   const assets = useAssets;
 
-  const [value, setValue] = useState('');
-  const [select, setSelect] = useState('');
-  const options = {
-    male: 'Male',
-    female: 'Female',
-  };
+  const [weight, setWeight] = useState<string>('');
+  const [waistC, setWaistC] = useState<string>('');
 
   return (
     <View style={styles.container}>
-      <View style={{flex: 1, flexDirection: 'row', gap: RFValue(10), marginBottom: RFValue(10)}}>
-        <AttributeInput
-          label={'Gender'}
-          value={value}
-          onChangeText={(text: string) => setValue(text)}
-        />
-        <AttributeSelect
-          value={select}
-          label="M"
-          options={options}
-          onSelectValue={(selectedValue: string) => setSelect(selectedValue)}
-        />
-      </View>
-      <AttributeSelect
-        value={select}
-        label="M"
-        options={options}
-        onSelectValue={(selectedValue: string) => setSelect(selectedValue)}
-      />
-      <View style={{flex: 1, flexDirection: 'row', gap: RFValue(10), marginTop: RFValue(10)}}>
-        <AttributeSelect
-          value={select}
-          label="M"
-          options={options}
-          onSelectValue={(selectedValue: string) => setSelect(selectedValue)}
-        />
-        <AttributeInput
-          label={'Working Hours Per Day'}
-          value={'6'}
-          textStyle={{flex: 0, paddingHorizontal: RFValue(15)}}
-        />
+      <View style={styles.topInputsWrapper}>
+        <Text style={styles.topTitle}>Weekly Update:</Text>
+        <View style={styles.topRowWrapper}>
+          <AttributeInput
+            label={t('home.weight')}
+            value={weight}
+            placeholder={'145 LBS'}
+            onChangeText={(text: string) => setWeight(text)}
+          />
+          <AttributeInput
+            label={t('home.waistC')}
+            labelStyle={{flex: 0, width: RFValue(100)}}
+            value={waistC}
+            placeholder={'12 in'}
+            onChangeText={(text: string) => setWaistC(text)}
+          />
+        </View>
       </View>
     </View>
   );

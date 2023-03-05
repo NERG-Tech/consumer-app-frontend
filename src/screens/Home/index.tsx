@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: RFValue(20),
     marginTop: RFValue(20),
-    marginBottom: RFValue(8),
+    marginBottom: RFValue(16),
   },
   tabWrapper: {
     flex: 1,
