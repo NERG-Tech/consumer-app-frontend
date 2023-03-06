@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../../common/constants/StyleConstants';
-import {useAssets} from '../../../hooks/useAssets';
 import {AttributeInput} from '../../../common/components';
+import {BaseActivitiesChart, StakeUpChart} from './Charts';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,11 +28,13 @@ const styles = StyleSheet.create({
     gap: RFValue(16),
     marginTop: RFValue(24),
   },
+  chartsWrapper: {
+    flexDirection: 'column',
+  },
 });
 
 export function WeeklyProgress() {
   const {t} = useTranslation();
-  const assets = useAssets;
 
   const [weight, setWeight] = useState<string>('');
   const [waistC, setWaistC] = useState<string>('');
@@ -60,6 +58,10 @@ export function WeeklyProgress() {
             onChangeText={(text: string) => setWaistC(text)}
           />
         </View>
+      </View>
+      <View style={styles.chartsWrapper}>
+        <BaseActivitiesChart />
+        <StakeUpChart />
       </View>
     </View>
   );

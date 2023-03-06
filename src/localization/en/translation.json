@@ -49,6 +49,15 @@
     "ha": "Healthy Activity",
     "rt": "Rejuvenating Time",
     "weight": "Weight",
-    "waistC": "Waist Circumference"
+    "waistC": "Waist Circumference",
+    "baseActivities": "Base Activities",
+    "publish": "Publish",
+    "stackUp": "Here’s how you stack up",
+    "hl": "Hydration Levels",
+    "tp": "Total Percentage",
+    "st": "Sedentary Time",
+    "avg": "Your Averages",
+    "similarUser": "Similar Users",
+    "proUser": "Pro Users"
   }
 }

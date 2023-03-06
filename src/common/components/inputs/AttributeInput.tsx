@@ -21,23 +21,22 @@ const styles = StyleSheet.create({
     borderRadius: RFValue(16),
   },
   input: {
-    flex: 1,
     fontSize: FONT_SIZE.MD,
     fontWeight: FONT_WEIGHT.SEMI_BOLD,
     color: COLORS.WHITE,
     textAlign: 'center',
+    paddingVertical: RFValue(5),
     paddingHorizontal: RFValue(10),
+    borderLeftWidth: 1,
+    borderLeftColor: COLORS.DIVIDER_LIGHT,
   },
   label: {
     flex: 1,
-    fontSize: FONT_SIZE.XS,
+    fontSize: FONT_SIZE.XXS,
     fontWeight: FONT_WEIGHT.LIGHT,
     color: COLORS.TEXT_GREY_LIGHTER,
     textAlign: 'center',
-    paddingVertical: RFValue(10),
     paddingHorizontal: RFValue(10),
-    borderRightWidth: 1,
-    borderRightColor: COLORS.DIVIDER_LIGHT,
   },
 });
 

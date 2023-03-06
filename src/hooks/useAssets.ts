@@ -23,6 +23,7 @@ const DefaultPlayer = require('../assets/img/player.png');
 const LungsImage = require('../assets/img/lungs.png');
 const ArrowUpImage = require('../assets/img/arrow_up.png');
 const AddListImage = require('../assets/img/list_add.png');
+const ShareImage = require('../assets/img/share.png');
 
 export function useAssets(type: string) {
   switch (type) {
@@ -68,6 +69,8 @@ export function useAssets(type: string) {
       return ArrowUpImage;
     case 'list_add':
       return AddListImage;
+    case 'share':
+      return ShareImage;
     default:
       return null;
   }
