@@ -27,14 +27,14 @@ const styles = StyleSheet.create({
   },
   percentValue: {
     fontWeight: FONT_WEIGHT.SEMI_BOLD,
-    fontSize: RFValue(36),
+    fontSize: RFValue(32),
     color: COLORS.TEXT_DARK,
   },
   percentSymbol: {
     fontWeight: FONT_WEIGHT.LIGHT,
     fontSize: RFValue(24),
     color: COLORS.TEXT_DARK,
-    marginLeft: RFValue(12),
+    marginLeft: RFValue(8),
   },
   labelText: {
     fontWeight: FONT_WEIGHT.LIGHT,
@@ -75,11 +75,15 @@ const styles = StyleSheet.create({
 });
 
 interface PropsI extends CircularProgressBarPropsI {
+  value: number;
+  unit?: string;
   label: string;
   onAddList: (event: GestureResponderEvent) => void;
 }
 
 export function PlayerStatusBar({
+  value,
+  unit,
   label,
   progress,
   diameter,
@@ -100,8 +104,10 @@ export function PlayerStatusBar({
         strokeWidth={strokeWidth}>
         <View style={styles.contentWrapper}>
           <View style={styles.percentWrapper}>
-            <Text style={styles.percentValue}>{progress}</Text>
-            <Text style={styles.percentSymbol}>%</Text>
+            <Text style={styles.percentValue}>
+              {value.toLocaleString(undefined, {maximumFractionDigits: 2})}
+            </Text>
+            <Text style={styles.percentSymbol}>{unit}</Text>
           </View>
           <Text style={styles.labelText}>{label}</Text>
           <View style={styles.arrowWrapper}>

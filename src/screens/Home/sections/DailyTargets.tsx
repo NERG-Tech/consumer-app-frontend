@@ -28,6 +28,8 @@ export function DailyTargets() {
     <View style={styles.progressBarsWrapper}>
       <View style={styles.progressBarRowWrapper}>
         <PlayerStatusBar
+          value={3.5}
+          unit={'L'}
           label={t('home.htc')}
           progress={75}
           diameter={wp(43)}
@@ -36,6 +38,7 @@ export function DailyTargets() {
           onAddList={() => console.log(t('home.htc'))}
         />
         <PlayerStatusBar
+          value={2000}
           label={t('home.ctc')}
           progress={30}
           diameter={wp(43)}
@@ -46,6 +49,8 @@ export function DailyTargets() {
       </View>
       <View style={styles.progressBarRowWrapper}>
         <PlayerStatusBar
+          value={75}
+          unit={'Min'}
           label={t('home.ha')}
           progress={60}
           diameter={wp(43)}
@@ -54,6 +59,8 @@ export function DailyTargets() {
           onAddList={() => console.log(t('home.ha'))}
         />
         <PlayerStatusBar
+          value={75}
+          unit={'Min'}
           label={t('home.rt')}
           progress={100}
           diameter={wp(43)}
