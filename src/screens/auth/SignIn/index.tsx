@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: RFValue(6),
     borderRadius: RFValue(3),
-    borderWidth: 1,
+    borderWidth: RFValue(1),
     borderColor: COLORS.BORDER_ALPHA,
     backgroundColor: COLORS.WHITE_ALPHA,
     elevation: 2,

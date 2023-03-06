@@ -11,6 +11,7 @@ const CheckActive = require('../assets/img/hoc/check_active.png');
 const CircleLeft = require('../assets/img/hoc/circle_left.png');
 const CircleRight = require('../assets/img/hoc/circle_right.png');
 const CircleDown = require('../assets/img/hoc/circle_down.png');
+const CircleDropRight = require('../assets/img/hoc/circle_drop_right.png');
 
 const HomeActiveTab = require('../assets/img/tabs/home_active.png');
 const HomeNormalTab = require('../assets/img/tabs/home_normal.png');
@@ -18,6 +19,12 @@ const ShareActiveTab = require('../assets/img/tabs/share_active.png');
 const ShareNormalTab = require('../assets/img/tabs/share_normal.png');
 const FocusActiveTab = require('../assets/img/tabs/focus_active.png');
 const FocusNormalTab = require('../assets/img/tabs/focus_normal.png');
+
+const DefaultPlayer = require('../assets/img/player.png');
+const LungsImage = require('../assets/img/lungs.png');
+const ArrowUpImage = require('../assets/img/arrow_up.png');
+const AddListImage = require('../assets/img/list_add.png');
+const ShareImage = require('../assets/img/share.png');
 
 export function useAssets(type: string) {
   switch (type) {
@@ -55,6 +62,18 @@ export function useAssets(type: string) {
       return CircleRight;
     case 'circle_down':
       return CircleDown;
+    case 'circle_drop_right':
+      return CircleDropRight;
+    case 'player':
+      return DefaultPlayer;
+    case 'lungs':
+      return LungsImage;
+    case 'arrow_up':
+      return ArrowUpImage;
+    case 'list_add':
+      return AddListImage;
+    case 'share':
+      return ShareImage;
     default:
       return null;
   }
