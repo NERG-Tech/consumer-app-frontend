@@ -11,6 +11,7 @@ const CheckActive = require('../assets/img/hoc/check_active.png');
 const CircleLeft = require('../assets/img/hoc/circle_left.png');
 const CircleRight = require('../assets/img/hoc/circle_right.png');
 const CircleDown = require('../assets/img/hoc/circle_down.png');
+const CircleDropRight = require('../assets/img/hoc/circle_drop_right.png');
 
 const HomeActiveTab = require('../assets/img/tabs/home_active.png');
 const HomeNormalTab = require('../assets/img/tabs/home_normal.png');
@@ -61,6 +62,8 @@ export function useAssets(type: string) {
       return CircleRight;
     case 'circle_down':
       return CircleDown;
+    case 'circle_drop_right':
+      return CircleDropRight;
     case 'player':
       return DefaultPlayer;
     case 'lungs':

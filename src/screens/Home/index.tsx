@@ -46,9 +46,33 @@ const styles = StyleSheet.create({
   infoTextSpan: {
     fontWeight: FONT_WEIGHT.BOLD,
   },
+  healthWrapper: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: RFValue(12),
+    borderWidth: RFValue(1),
+    borderColor: COLORS.BORDER_ALPHA_LIGHT,
+    borderRadius: RFValue(20),
+  },
   lungWrapper: {
-    width: RFValue(60),
-    height: RFValue(60),
+    width: RFValue(28),
+    height: RFValue(27),
+    resizeMode: 'contain',
+    tintColor: COLORS.BLUE,
+  },
+  healthBottomWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: RFValue(8),
+  },
+  healthBottomText: {
+    fontSize: FONT_SIZE.XS,
+    fontWeight: FONT_WEIGHT.LIGHT,
+    color: COLORS.TEXT_DARK_MIDDLE,
+  },
+  healthBottomIcon: {
+    width: RFValue(12),
+    height: RFValue(12),
     resizeMode: 'contain',
   },
   tabsWrapper: {
@@ -119,8 +143,12 @@ function HomeScreen() {
           </Text>
           <Text style={styles.infoText}>How are you feeling?</Text>
         </View>
-        <Button onPress={() => console.log('Lungs')}>
+        <Button customStyle={styles.healthWrapper} onPress={() => console.log('Lungs')}>
           <Image style={styles.lungWrapper} source={assets('lungs')} />
+          <View style={styles.healthBottomWrapper}>
+            <Text style={styles.healthBottomText}>My Health</Text>
+            <Image source={assets('circle_drop_right')} style={styles.healthBottomIcon} />
+          </View>
         </Button>
       </View>
 
