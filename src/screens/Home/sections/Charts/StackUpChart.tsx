@@ -156,7 +156,7 @@ export function StakeUpChart() {
         <SvgText
           origin={`${0}, ${0}`}
           rotation={0}
-          x={RFValue(264)}
+          x={marginLeft + barWidth * 2 + RFValue(20) + width / 2}
           y={calcYPos(pos) + RFValue(4)}
           textAnchor={'middle'}
           fontSize={RFValue(12)}
