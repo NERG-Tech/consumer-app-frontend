@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZE.XS,
     fontWeight: FONT_WEIGHT.LIGHT,
     color: COLORS.TEXT_DARK_MIDDLE,
+    marginRight: RFValue(4),
   },
   healthBottomIcon: {
     width: RFValue(12),
