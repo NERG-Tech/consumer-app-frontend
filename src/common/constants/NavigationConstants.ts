@@ -24,6 +24,7 @@ export const HOME = 'home';
 export const HOME_TAB = 'home_tab';
 export const SHARE_TAB = 'share_tab';
 export const FOCUS_TAB = 'focus_tab';
+export const GROUP_TAB = 'group_tab';
 
 // HOME NAVIGATOR
 export const DAILY_TARGETS = 'daily_targets';

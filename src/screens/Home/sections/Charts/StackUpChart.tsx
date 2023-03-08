@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   chartTopTitle: {
-    fontSize: FONT_SIZE.L,
+    flex: 1,
+    fontSize: FONT_SIZE.MD,
     fontWeight: FONT_WEIGHT.LIGHT,
     color: COLORS.TEXT_DARK,
   },
@@ -37,12 +38,19 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZE.XS,
     fontWeight: FONT_WEIGHT.LIGHT,
     color: COLORS.TEXT_DARK,
+    width: RFValue(60),
+    marginHorizontal: RFValue(12),
   },
-  linkIcon: {
-    width: RFValue(18),
+  groupIcon: {
+    width: RFValue(19),
     height: RFValue(19),
     resizeMode: 'contain',
-    marginLeft: RFValue(8),
+    tintColor: COLORS.BLACK,
+  },
+  dropDownIcon: {
+    width: RFValue(20),
+    height: RFValue(20),
+    resizeMode: 'contain',
   },
   chartBodyWrapper: {
     flex: 1,
@@ -60,7 +68,7 @@ export function StakeUpChart() {
   const paddingTop = RFValue(10);
   const verticalLabelSize = RFValue(10);
   const realChartHeight = chartHeight + paddingTop + verticalLabelSize;
-  const barWidth = RFValue(36);
+  const barWidth = RFValue(32);
 
   const calcYPos = (val: number) => paddingTop + ((100 - val) * chartHeight) / 100;
   const calcHeight = (val: number) => (val * chartHeight) / 100;
@@ -159,7 +167,7 @@ export function StakeUpChart() {
           x={marginLeft + barWidth * 2 + RFValue(20) + width / 2}
           y={calcYPos(pos) + RFValue(4)}
           textAnchor={'middle'}
-          fontSize={RFValue(12)}
+          fontSize={RFValue(10)}
           fontWeight={FONT_WEIGHT.BOLD}
           fill={COLORS.WHITE}>
           {label}
@@ -174,8 +182,9 @@ export function StakeUpChart() {
         <View style={styles.chartTopBar}>
           <Text style={styles.chartTopTitle}>{t('home.stackUp')}</Text>
           <Button customStyle={styles.linkWrapper} onPress={() => console.log('Publish')}>
-            <Text style={styles.linkText}>{t('home.publish')}</Text>
-            <Image source={assets('share')} style={styles.linkIcon} />
+            <Image source={assets('group_normal_tab')} style={styles.groupIcon} />
+            <Text style={styles.linkText}>{t('home.faf')}</Text>
+            <Image source={assets('circle_drop_down')} style={styles.dropDownIcon} />
           </Button>
         </View>
 
@@ -185,8 +194,8 @@ export function StakeUpChart() {
             {[0, 20, 50, 80, 100].map((val: number) => innerGridLine(val))}
             {barChartGroup(85, 55, 90)}
             <G>
-              {barIndex(20, t('home.proUser'), COLORS.CHART_BLUE)}
-              {barIndex(50, t('home.similarUser'), COLORS.CHART_ORANGE)}
+              {barIndex(20, t('home.similarUser'), COLORS.CHART_BLUE)}
+              {barIndex(50, t('home.faf'), COLORS.CHART_ORANGE)}
               {barIndex(80, t('home.avg'), COLORS.CHART_GREY_DARK)}
             </G>
           </Svg>

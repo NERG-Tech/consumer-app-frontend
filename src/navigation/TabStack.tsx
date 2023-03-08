@@ -3,19 +3,19 @@ import {RouteProp} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import type {StackNavigationProp} from '@react-navigation/stack';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {HOME_TAB, SHARE_TAB, FOCUS_TAB} from '../common/constants/NavigationConstants';
+import {HOME_TAB, SHARE_TAB, GROUP_TAB} from '../common/constants/NavigationConstants';
 import {COLORS} from '../common/constants/StyleConstants';
 import {useAssets} from '../hooks/useAssets';
 import {Tab} from '../common/components';
 
 import {HomeStack} from './HomeStack';
 import {ShareStack} from './ShareStack';
-import {FocusStack} from './FocusStack';
+import {GroupStack} from './GroupStack';
 
 export type TabStackParamList = {
   [HOME_TAB]: undefined;
   [SHARE_TAB]: undefined;
-  [FOCUS_TAB]: undefined;
+  [GROUP_TAB]: undefined;
 };
 
 export type TabStackNavigationProp<RouteName extends keyof TabStackParamList> = StackNavigationProp<
@@ -67,11 +67,11 @@ export function TabStack() {
         }}
       />
       <Screen
-        name={FOCUS_TAB}
-        component={FocusStack}
+        name={GROUP_TAB}
+        component={GroupStack}
         options={{
           tabBarIcon: ({focused}) => (
-            <Tab icon={focused ? assets('focus_active_tab') : assets('focus_normal_tab')} />
+            <Tab icon={focused ? assets('group_active_tab') : assets('group_normal_tab')} />
           ),
         }}
       />
