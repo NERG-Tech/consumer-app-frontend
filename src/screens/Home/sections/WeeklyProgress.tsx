@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   topInputsWrapper: {
     flexDirection: 'column',
     marginTop: RFValue(20),
-    marginBottom: RFValue(40),
+    marginBottom: RFValue(20),
     paddingVertical: RFValue(20),
     paddingHorizontal: RFValue(12),
     borderWidth: RFValue(1),
