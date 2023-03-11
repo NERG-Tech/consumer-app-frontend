@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, ScrollView, StyleSheet} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {SearchInput} from '../../../common/components/inputs/SearchInput';
 import {SearchItem} from '../components';
 
 const styles = StyleSheet.create({
@@ -9,32 +8,19 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-  searchWrapper: {
-    height: RFValue(60),
-    borderRadius: RFValue(24),
-  },
   scrollViewWrapper: {
     flex: 1,
     flexDirection: 'column',
-    marginTop: RFValue(3),
   },
   resultWrapper: {
     flexDirection: 'column',
-    paddingTop: RFValue(20),
+    paddingTop: RFValue(30),
   },
 });
 
 export function SearchScreen() {
-  const [searchQuery, setSearchQuery] = useState('');
   return (
     <View style={styles.container}>
-      <SearchInput
-        value={searchQuery}
-        placeholder={'Search..'}
-        onChangeText={setSearchQuery}
-        onSearch={(searchQuery: string) => console.log(searchQuery)}
-        customStyle={styles.searchWrapper}
-      />
       <ScrollView style={styles.scrollViewWrapper} showsVerticalScrollIndicator={false}>
         <View style={styles.resultWrapper}>
           <SearchItem

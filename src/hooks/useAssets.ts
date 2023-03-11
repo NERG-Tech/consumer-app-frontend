@@ -35,6 +35,8 @@ const TimerImage = require('../assets/img/timer.png');
 const HeartPulseImage = require('../assets/img/heart_pulse.png');
 const MentalHealthImage = require('../assets/img/mental_health.png');
 const BubbleImage = require('../assets/img/bubble.png');
+const MealImage = require('../assets/img/meal.png');
+const WalkImage = require('../assets/img/walk.png');
 const ChartImage = require('../assets/img/chart.png');
 
 export function useAssets(type: string) {
@@ -98,6 +100,10 @@ function globalAssets(path: string) {
       return MentalHealthImage;
     case 'bubble':
       return BubbleImage;
+    case 'meal':
+      return MealImage;
+    case 'walk':
+      return WalkImage;
     case 'chart':
       return ChartImage;
     default:

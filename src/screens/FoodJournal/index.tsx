@@ -3,7 +3,7 @@ import {View, StyleSheet, Text} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../common/constants/StyleConstants';
-import {Button} from '../../common/components';
+import {Button, SearchInput} from '../../common/components';
 import {SearchScreen, HistoryScreen} from './sections';
 
 const tabs = {
@@ -18,6 +18,10 @@ const styles = StyleSheet.create({
     paddingTop: RFValue(24),
     paddingHorizontal: RFValue(16),
   },
+  searchWrapper: {
+    height: RFValue(60),
+    borderRadius: RFValue(24),
+  },
   tabsWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -29,6 +33,7 @@ const styles = StyleSheet.create({
   tabWrapper: {
     flexDirection: 'column',
     width: wp(30),
+    marginTop: RFValue(30),
   },
   tabText: {
     fontSize: FONT_SIZE.MS,
@@ -63,15 +68,22 @@ const styles = StyleSheet.create({
   },
   bodyWrapper: {
     flex: 1,
-    paddingTop: RFValue(30),
   },
 });
 
 function FoodJournalScreen() {
   const [activeTab, setActiveTab] = useState('search');
+  const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <View style={styles.container}>
+      <SearchInput
+        value={searchQuery}
+        placeholder={'Search..'}
+        onChangeText={setSearchQuery}
+        onSearch={(searchQuery: string) => console.log(searchQuery)}
+        customStyle={styles.searchWrapper}
+      />
       <View style={styles.tabsWrapper}>
         {Object.keys(tabs).map((tab: string, i: number) => (
           <Button key={i} customStyle={styles.tabWrapper} onPress={() => setActiveTab(tab)}>
