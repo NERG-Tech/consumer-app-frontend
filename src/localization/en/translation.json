@@ -47,6 +47,8 @@
   "home": {
     "htc": "Hydration To Consume",
     "ctc": "Calories To Consume",
+    "wi": "Water Intake",
+    "ci": "Calorie Intake",
     "ha": "Healthy Activity",
     "rt": "Rejuvenating Time",
     "weight": "Weight",

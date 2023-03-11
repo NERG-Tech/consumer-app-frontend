@@ -6,7 +6,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {AppStackParamList} from '../../navigation/AppStack';
 import {
   HYDRATION_JOURNAL,
-  FOOD_JOURNAL,
+  PRODUCT_SEARCH,
   REST_JOURNAL,
   ACTIVITY_JOURNAL,
   MEASUREMENTS,
@@ -153,7 +153,7 @@ function HomeScreen() {
         navigation.navigate(HYDRATION_JOURNAL);
         break;
       case 'food':
-        navigation.navigate(FOOD_JOURNAL);
+        navigation.navigate(PRODUCT_SEARCH);
         break;
       case 'activity':
         navigation.navigate(ACTIVITY_JOURNAL);

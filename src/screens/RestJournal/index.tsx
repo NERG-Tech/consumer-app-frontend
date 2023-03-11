@@ -40,7 +40,6 @@ function RestJournalScreen() {
             'Starting with the neck and moving down to your ankles, stretch your muscles and roll your joints.'
           }
           icon={'global.heart_pulse'}
-          iconColor={COLORS.BLACK}
           isComplete={isDeepStretch}
           onComplete={setDeepStretch}
         />
@@ -49,7 +48,6 @@ function RestJournalScreen() {
           content={'No less than 2 hours before bed time.'}
           description={'Lower sounds and turn off extra lights. Give your self a mental break.'}
           icon={'global.mental_health'}
-          iconColor={COLORS.BLACK}
           isComplete={isReduceStimulants}
           onComplete={setReduceStimulants}
         />
@@ -60,7 +58,6 @@ function RestJournalScreen() {
             'Warm water or your relaxing favorite tea. Regulate your body temperature and relax your gut. '
           }
           icon={'global.bubble'}
-          iconColor={COLORS.BLUE_LIGHT}
           isComplete={isRelaxingHydration}
           onComplete={setRelaxingHydration}
         />
@@ -71,7 +68,6 @@ function RestJournalScreen() {
             'Take deep controlled breaths for 15-20 minutes. Preferably while already lying down for the night.'
           }
           icon={'global.lungs'}
-          iconColor={COLORS.BLACK}
           isComplete={isFocusedBreathing}
           onComplete={setFocusedBreathing}
           customStyle={{marginBottom: RFValue(40)}}

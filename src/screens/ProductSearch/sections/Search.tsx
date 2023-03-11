@@ -18,7 +18,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export function SearchScreen() {
+interface PropsI {
+  gotoFoodJournalScreen: () => void;
+}
+
+export function SearchScreen(props: PropsI) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scrollViewWrapper} showsVerticalScrollIndicator={false}>
@@ -27,35 +31,35 @@ export function SearchScreen() {
             title={'Apple Pie'}
             description={'Cakes and pies'}
             size={2}
-            onSelect={() => {}}
+            onSelect={() => props.gotoFoodJournalScreen()}
           />
           <SearchItem
             title={'Apple Pie'}
             description={'Cakes and pies'}
             property={'Fast Food'}
             size={2}
-            onSelect={() => {}}
+            onSelect={() => props.gotoFoodJournalScreen()}
           />
           <SearchItem
             title={'Apple Pie'}
             description={'Cakes and pies'}
             property={'Filling'}
             size={2}
-            onSelect={() => {}}
+            onSelect={() => props.gotoFoodJournalScreen()}
           />
           <SearchItem
             title={'Apple Pie'}
             description={'Cakes and pies'}
             property={'Pie Crust'}
             size={2}
-            onSelect={() => {}}
+            onSelect={() => props.gotoFoodJournalScreen()}
           />
           <SearchItem
             title={'Apple Pie'}
             description={'Cakes and pies'}
             property={'Pie Crust'}
             size={2}
-            onSelect={() => {}}
+            onSelect={() => props.gotoFoodJournalScreen()}
           />
         </View>
       </ScrollView>

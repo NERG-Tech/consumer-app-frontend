@@ -94,7 +94,7 @@ export function RestItem(props: PropsI) {
     <View style={[styles.container, customStyle]}>
       <GradientBorderWrapper
         startColor={COLORS.GRADIENT_PURPLE}
-        endColor={COLORS.GRADIENT_GREEN}
+        endColor={COLORS.GRADIENT_PINK}
         borderWidth={2}
         borderRadius={24}
         width={wp(100) - RFValue(16) * 2}
@@ -118,7 +118,10 @@ export function RestItem(props: PropsI) {
         </View>
       </GradientBorderWrapper>
       <View style={styles.todoContentWrapper}>
-        <Image source={assets(icon)} style={[styles.iconWrapper, {tintColor: iconColor}]} />
+        <Image
+          source={assets(icon)}
+          style={[styles.iconWrapper, {tintColor: iconColor ? iconColor : COLORS.GRADIENT_PURPLE}]}
+        />
         <Text style={styles.contentText}>{description}</Text>
       </View>
     </View>

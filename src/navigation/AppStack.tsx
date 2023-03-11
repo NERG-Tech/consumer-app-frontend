@@ -10,6 +10,7 @@ import {
   HYDRATION_JOURNAL,
   MEASUREMENTS,
   NOTIFICATIONS,
+  PRODUCT_SEARCH,
   REST_JOURNAL,
   SETTINGS,
 } from '../common/constants/NavigationConstants';
@@ -21,9 +22,10 @@ import {TabStack} from './TabStack';
 import SettingScreen from '../screens/Setting';
 import NotificationScreen from '../screens/Notification';
 import HydrationJournalScreen from '../screens/HydrationJournal';
-import RestJournalScreen from '../screens/RestJournal';
 import FoodJournalScreen from '../screens/FoodJournal';
+import RestJournalScreen from '../screens/RestJournal';
 import ActivityJournalScreen from '../screens/ActivityJournal';
+import ProductSearchScreen from '../screens/ProductSearch';
 import MeasurementsScreen from '../screens/Measurements';
 
 export type AppStackParamList = {
@@ -35,6 +37,7 @@ export type AppStackParamList = {
   [REST_JOURNAL]: undefined;
   [FOOD_JOURNAL]: undefined;
   [ACTIVITY_JOURNAL]: undefined;
+  [PRODUCT_SEARCH]: undefined;
 };
 
 export type AppStackNavigationProp<RouteName extends keyof AppStackParamList> = StackNavigationProp<
@@ -133,9 +136,8 @@ export function AppStack() {
         options={({navigation}) => ({
           ...DefaultHeaderOptions,
           title: t('navigation.fj') as string,
-          headerLeft: () => null,
-          headerRight: () => (
-            <GoBack navigation={navigation} icon={POSITION.CLOSE} position={POSITION.RIGHT} />
+          headerLeft: () => (
+            <GoBack navigation={navigation} icon={POSITION.LEFT} position={POSITION.LEFT} />
           ),
         })}
       />
@@ -145,6 +147,18 @@ export function AppStack() {
         options={({navigation}) => ({
           ...DefaultHeaderOptions,
           title: t('navigation.aj') as string,
+          headerLeft: () => null,
+          headerRight: () => (
+            <GoBack navigation={navigation} icon={POSITION.CLOSE} position={POSITION.RIGHT} />
+          ),
+        })}
+      />
+      <Screen
+        name={PRODUCT_SEARCH}
+        component={ProductSearchScreen}
+        options={({navigation}) => ({
+          ...DefaultHeaderOptions,
+          title: t('navigation.fj') as string,
           headerLeft: () => null,
           headerRight: () => (
             <GoBack navigation={navigation} icon={POSITION.CLOSE} position={POSITION.RIGHT} />
