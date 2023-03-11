@@ -204,7 +204,7 @@ export function BaseActivitiesChart() {
           <Text style={styles.chartTopTitle}>{t('home.myNerg')}</Text>
           <Button customStyle={styles.linkWrapper} onPress={() => console.log('Publish')}>
             <Text style={styles.linkText}>{t('home.publish')}</Text>
-            <Image source={assets('share')} style={styles.linkIcon} />
+            <Image source={assets('global.share')} style={styles.linkIcon} />
           </Button>
         </View>
 

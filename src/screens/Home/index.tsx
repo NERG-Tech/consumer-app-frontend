@@ -137,7 +137,7 @@ function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.playerHelloWrapper}>
-        <Image style={styles.playerAvatar} source={assets('player')} />
+        <Image style={styles.playerAvatar} source={assets('global.player')} />
         <View style={styles.infoWrapper}>
           <Text style={styles.infoText}>
             Hello <Text style={styles.infoTextSpan}>Julieta</Text>
@@ -145,10 +145,10 @@ function HomeScreen() {
           <Text style={styles.infoText}>How are you feeling?</Text>
         </View>
         <Button customStyle={styles.healthWrapper} onPress={() => console.log('Lungs')}>
-          <Image style={styles.lungWrapper} source={assets('lungs')} />
+          <Image style={styles.lungWrapper} source={assets('global.lungs')} />
           <View style={styles.healthBottomWrapper}>
             <Text style={styles.healthBottomText}>My Health</Text>
-            <Image source={assets('circle_drop_right')} style={styles.healthBottomIcon} />
+            <Image source={assets('hoc.circle_drop_right')} style={styles.healthBottomIcon} />
           </View>
         </Button>
       </View>

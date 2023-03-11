@@ -182,9 +182,9 @@ export function StakeUpChart() {
         <View style={styles.chartTopBar}>
           <Text style={styles.chartTopTitle}>{t('home.stackUp')}</Text>
           <Button customStyle={styles.linkWrapper} onPress={() => console.log('Publish')}>
-            <Image source={assets('group_normal_tab')} style={styles.groupIcon} />
+            <Image source={assets('main.group_normal_tab')} style={styles.groupIcon} />
             <Text style={styles.linkText}>{t('home.faf')}</Text>
-            <Image source={assets('circle_drop_down')} style={styles.dropDownIcon} />
+            <Image source={assets('hoc.circle_drop_down')} style={styles.dropDownIcon} />
           </Button>
         </View>
 

@@ -64,7 +64,7 @@ export function SearchInput({
       />
       {!!value && (
         <Button customStyle={styles.searchBtn} onPress={() => onSearch(value)}>
-          <Image source={assets('hoc.search_fill')} style={styles.searchIcon} />
+          <Image source={assets('hoc.search')} style={styles.searchIcon} />
         </Button>
       )}
     </View>

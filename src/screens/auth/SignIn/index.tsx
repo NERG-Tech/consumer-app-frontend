@@ -120,8 +120,8 @@ function SignInScreen() {
           keyboardShouldPersistTaps={'handled'}>
           <View style={styles.container}>
             <View style={styles.upSideWrapper}>
-              <Image style={styles.logo} source={assets('logo')} />
-              <Image style={styles.watch} source={assets('watch_logo')} />
+              <Image style={styles.logo} source={assets('main.logo')} />
+              <Image style={styles.watch} source={assets('main.watch_logo')} />
             </View>
             <View style={styles.downSideWrapper}>
               <View style={styles.tabsWrapper}>

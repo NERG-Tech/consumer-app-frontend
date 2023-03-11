@@ -71,10 +71,10 @@ function WelcomeScreen() {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={assets('background')} style={styles.backgroundImg}>
-        <Image style={styles.logo} source={assets('logo')} />
+      <ImageBackground source={assets('main.background')} style={styles.backgroundImg}>
+        <Image style={styles.logo} source={assets('main.logo')} />
         <Text style={styles.staticText}>Outperform your genetics.</Text>
-        <Image style={styles.watchLogo} source={assets('watch_logo')} />
+        <Image style={styles.watchLogo} source={assets('main.watch_logo')} />
         <RoundedGradientButton
           label={t('app.signIn') as string}
           onPress={() => navigation.navigate(SIGN_IN)}

@@ -53,7 +53,7 @@ export function TabStack() {
         component={HomeStack}
         options={{
           tabBarIcon: ({focused}) => (
-            <Tab icon={focused ? assets('home_active_tab') : assets('home_normal_tab')} />
+            <Tab icon={focused ? assets('main.home_active_tab') : assets('main.home_normal_tab')} />
           ),
         }}
       />
@@ -62,7 +62,9 @@ export function TabStack() {
         component={ShareStack}
         options={{
           tabBarIcon: ({focused}) => (
-            <Tab icon={focused ? assets('share_active_tab') : assets('share_normal_tab')} />
+            <Tab
+              icon={focused ? assets('main.share_active_tab') : assets('main.share_normal_tab')}
+            />
           ),
         }}
       />
@@ -71,7 +73,9 @@ export function TabStack() {
         component={GroupStack}
         options={{
           tabBarIcon: ({focused}) => (
-            <Tab icon={focused ? assets('group_active_tab') : assets('group_normal_tab')} />
+            <Tab
+              icon={focused ? assets('main.group_active_tab') : assets('main.group_normal_tab')}
+            />
           ),
         }}
       />

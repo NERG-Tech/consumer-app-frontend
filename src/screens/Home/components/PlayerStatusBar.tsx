@@ -111,13 +111,13 @@ export function PlayerStatusBar({
           </View>
           <Text style={styles.labelText}>{label}</Text>
           <View style={styles.arrowWrapper}>
-            <Image style={styles.arrow} source={assets('arrow_up')} />
+            <Image style={styles.arrow} source={assets('global.arrow_up')} />
           </View>
         </View>
       </CircularProgressBar>
       <Button customStyle={styles.addListWrapper} onPress={onAddList}>
         <Text style={styles.addListText}>Journal</Text>
-        <Image style={styles.addListImage} source={assets('list_add')} />
+        <Image style={styles.addListImage} source={assets('global.list_add')} />
       </Button>
     </View>
   );
