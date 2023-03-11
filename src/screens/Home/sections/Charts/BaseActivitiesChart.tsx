@@ -11,13 +11,19 @@ import {Button} from '../../../../common/components';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    marginHorizontal: -RFValue(16),
   },
   chartsWrapper: {
     paddingVertical: RFValue(20),
-    paddingHorizontal: RFValue(30),
+    paddingHorizontal: RFValue(20),
     borderWidth: RFValue(1),
-    borderColor: COLORS.BORDER_ALPHA_LIGHT,
+    borderRadius: RFValue(24),
+    borderColor: COLORS.BLUE,
+    backgroundColor: COLORS.WHITE,
+    elevation: 2,
+    shadowOpacity: 1,
+    shadowRadius: 4,
+    shadowColor: COLORS.BLACK_ALPHA,
+    shadowOffset: {width: 2, height: 2},
   },
   chartTopBar: {
     flexDirection: 'row',
@@ -25,8 +31,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   chartTopTitle: {
-    fontSize: FONT_SIZE.L,
-    fontWeight: FONT_WEIGHT.LIGHT,
+    fontSize: FONT_SIZE.MS,
+    fontWeight: FONT_WEIGHT.MIDDLE,
     color: COLORS.TEXT_DARK,
   },
   linkWrapper: {
@@ -62,7 +68,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     gap: RFValue(24),
     paddingVertical: RFValue(30),
-    paddingHorizontal: RFValue(20),
+    paddingHorizontal: RFValue(8),
   },
   indexRowWrapper: {
     flexDirection: 'row',
@@ -99,7 +105,7 @@ export function BaseActivitiesChart() {
   const {t} = useTranslation();
   const assets = useAssets;
 
-  const chartWidth = wp(100) - RFValue(30) * 2;
+  const chartWidth = wp(100) - RFValue(36) * 2;
   const chartHeight = RFValue(200);
   const paddingLeft = RFValue(40);
   const paddingTop = RFValue(10);

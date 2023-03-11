@@ -11,13 +11,19 @@ import {Button} from '../../../../common/components';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    marginHorizontal: -RFValue(16),
   },
   chartsWrapper: {
     paddingVertical: RFValue(20),
-    paddingHorizontal: RFValue(30),
+    paddingHorizontal: RFValue(20),
     borderWidth: RFValue(1),
-    borderColor: COLORS.BORDER_ALPHA_LIGHT,
+    borderRadius: RFValue(24),
+    borderColor: COLORS.BLUE,
+    backgroundColor: COLORS.WHITE,
+    elevation: 2,
+    shadowOpacity: 1,
+    shadowRadius: 4,
+    shadowColor: COLORS.BLACK_ALPHA,
+    shadowOffset: {width: 2, height: 2},
   },
   chartTopBar: {
     flexDirection: 'row',
@@ -26,13 +32,24 @@ const styles = StyleSheet.create({
   },
   chartTopTitle: {
     flex: 1,
-    fontSize: FONT_SIZE.MD,
+    fontSize: FONT_SIZE.MS,
     fontWeight: FONT_WEIGHT.MIDDLE,
     color: COLORS.TEXT_DARK,
   },
   linkWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: RFValue(12),
+    paddingHorizontal: RFValue(16),
+    borderRadius: RFValue(16),
+    borderWidth: RFValue(1),
+    borderColor: COLORS.BORDER_ALPHA_LIGHT,
+    backgroundColor: COLORS.BACKGROUND,
+    elevation: 2,
+    shadowOpacity: 1,
+    shadowRadius: 4,
+    shadowColor: COLORS.BLACK_ALPHA,
+    shadowOffset: {width: 2, height: 2},
   },
   linkText: {
     fontSize: FONT_SIZE.XS,
@@ -62,7 +79,7 @@ export function StakeUpChart() {
   const {t} = useTranslation();
   const assets = useAssets;
 
-  const chartWidth = wp(100) - RFValue(30) * 2;
+  const chartWidth = wp(100) - RFValue(36) * 2;
   const chartHeight = RFValue(200);
   const paddingLeft = RFValue(40);
   const paddingTop = RFValue(10);
@@ -180,7 +197,7 @@ export function StakeUpChart() {
     <View style={styles.container}>
       <View style={styles.chartsWrapper}>
         <View style={styles.chartTopBar}>
-          <Text style={styles.chartTopTitle}>{t('home.stackUp')}</Text>
+          <Text style={styles.chartTopTitle}>{t('home.yourRank')}</Text>
           <Button customStyle={styles.linkWrapper} onPress={() => console.log('Publish')}>
             <Image source={assets('main.group_normal_tab')} style={styles.groupIcon} />
             <Text style={styles.linkText}>{t('home.faf')}</Text>
