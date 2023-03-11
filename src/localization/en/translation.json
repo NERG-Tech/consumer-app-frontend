@@ -31,6 +31,7 @@
   },
   "navigation": {
     "settings": "My Settings",
+    "measurements": "My Measurements",
     "notifications": "Notifications",
     "health": "Your Health",
     "amh": "Auto Monitor Health",

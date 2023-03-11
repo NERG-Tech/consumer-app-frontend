@@ -9,6 +9,7 @@ import {
   FOOD_JOURNAL,
   REST_JOURNAL,
   ACTIVITY_JOURNAL,
+  MEASUREMENTS,
 } from '../../common/constants/NavigationConstants';
 import {Button} from '../../common/components';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../common/constants/StyleConstants';
@@ -165,6 +166,8 @@ function HomeScreen() {
     }
   };
 
+  const gotoMeasurementScreen = () => navigation.navigate(MEASUREMENTS);
+
   return (
     <View style={styles.container}>
       <View style={styles.playerHelloWrapper}>
@@ -200,7 +203,7 @@ function HomeScreen() {
         {activeTab === 'dailyTargets' ? (
           <DailyTargets gotoJournalScreen={(type: string) => gotoJournalScreens(type)} />
         ) : (
-          <WeeklyProgress />
+          <WeeklyProgress gotoMeasurementScreen={() => gotoMeasurementScreen()} />
         )}
       </ScrollView>
     </View>

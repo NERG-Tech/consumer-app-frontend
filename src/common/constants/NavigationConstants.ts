@@ -14,6 +14,7 @@ export const GROUP_SCREEN = 'focus_screen';
 export const HEALTH = 'health';
 export const SETTINGS = 'settings';
 export const NOTIFICATIONS = 'notifications';
+export const MEASUREMENTS = 'measurements';
 export const FOOD_JOURNAL = 'food_journal';
 export const REST_JOURNAL = 'rest_journal';
 export const ACTIVITY_JOURNAL = 'activity_journal';

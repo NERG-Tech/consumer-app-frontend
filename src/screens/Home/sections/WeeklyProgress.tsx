@@ -58,7 +58,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export function WeeklyProgress() {
+interface PropsI {
+  gotoMeasurementScreen: () => void;
+}
+
+export function WeeklyProgress(props: PropsI) {
   const assets = useAssets;
   const {t} = useTranslation();
 
@@ -72,7 +76,7 @@ export function WeeklyProgress() {
       <View style={styles.topInputsWrapper}>
         <View style={styles.topTitleWrapper}>
           <Text style={styles.topTitle}>Measurement Updates</Text>
-          <Button>
+          <Button onPress={() => props.gotoMeasurementScreen()}>
             <Image source={assets('global.chart')} style={styles.chartIcon} />
           </Button>
         </View>
