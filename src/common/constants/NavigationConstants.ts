@@ -8,6 +8,7 @@ export const FORGOT_PASSWORD = 'forgot_password';
 export const HOME_SCREEN = 'home_screen';
 export const SHARE_SCREEN = 'share_screen';
 export const FOCUS_SCREEN = 'focus_screen';
+export const GROUP_SCREEN = 'focus_screen';
 
 // MAIN NAVIGATOR
 export const HEALTH = 'health';

@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import type {StackNavigationProp} from '@react-navigation/stack';
 import {useTranslation} from 'react-i18next';
 import {HOME, SETTINGS, NOTIFICATIONS} from '../common/constants/NavigationConstants';
-import {HeaderLogo, GoToEmail, GoToSetting, GoBack, DIRECTION} from '../common/components';
+import {HeaderLogo, GoToEmail, GoToSetting, GoBack, POSITION} from '../common/components';
 import DefaultTheme from '../common/theme';
 import {DefaultHeaderOptions} from '../common/theme/Navigation';
 
@@ -57,7 +57,7 @@ export function AppStack() {
           title: t('navigation.settings') as string,
           headerLeft: () => null,
           headerRight: () => (
-            <GoBack navigation={navigation} icon={DIRECTION.RIGHT} positoin={DIRECTION.RIGHT} />
+            <GoBack navigation={navigation} icon={POSITION.RIGHT} position={POSITION.RIGHT} />
           ),
         })}
       />
@@ -68,7 +68,7 @@ export function AppStack() {
           ...DefaultHeaderOptions,
           title: t('navigation.notifications') as string,
           headerLeft: () => (
-            <GoBack navigation={navigation} icon={DIRECTION.LEFT} positoin={DIRECTION.LEFT} />
+            <GoBack navigation={navigation} icon={POSITION.LEFT} position={POSITION.LEFT} />
           ),
         })}
       />

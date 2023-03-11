@@ -4,3 +4,4 @@ export * from './inputs';
 export * from './navigations';
 export * from './CircularProgressBar';
 export * from './CheckItemList';
+export * from './GradientBorderWrapper';

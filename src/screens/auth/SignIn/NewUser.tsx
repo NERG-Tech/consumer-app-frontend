@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     height: RFValue(50),
     borderRadius: RFValue(18),
   },
-  remeberWrapper: {
+  rememberWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
     color: COLORS.TEXT_DARK,
     marginRight: RFValue(12),
   },
-  remeberCheckWrapper: {
+  rememberCheckWrapper: {
     marginRight: RFValue(12),
   },
-  remeberCheck: {
+  rememberCheck: {
     width: RFValue(30),
     height: RFValue(30),
     resizeMode: 'contain',
@@ -120,19 +120,19 @@ function NewUserScreen() {
           customStyle={styles.inputWrapper}
         />
       </View>
-      <Button customStyle={styles.remeberWrapper} onPress={handleRemember}>
+      <Button customStyle={styles.rememberWrapper} onPress={handleRemember}>
         <Text style={styles.rememberText}>{t('app.remember')}</Text>
-        <View style={styles.remeberCheckWrapper}>
+        <View style={styles.rememberCheckWrapper}>
           {isRemember ? (
-            <Image style={styles.remeberCheck} source={assets('check_active')} />
+            <Image style={styles.rememberCheck} source={assets('check_active')} />
           ) : (
-            <Image style={styles.remeberCheck} source={assets('check_normal')} />
+            <Image style={styles.rememberCheck} source={assets('check_normal')} />
           )}
         </View>
       </Button>
       <View style={styles.connectBtnWrapper}>
         <RoundedGradientButton
-          label={t('app.connect')}
+          label={t('app.connect') as string}
           loading={loading}
           onPress={handleSignIn}
           startColor={COLORS.BLUE}

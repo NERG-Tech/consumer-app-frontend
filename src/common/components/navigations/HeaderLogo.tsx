@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {COLORS} from '../../../common/constants/StyleConstants';
+import {COLORS} from '../../constants/StyleConstants';
 import {useAssets} from '../../../hooks/useAssets';
 import {Button} from '../buttons';
 
@@ -20,7 +20,7 @@ export function HeaderLogo() {
   const assets = useAssets;
   return (
     <Button customStyle={styles.container}>
-      <Image style={styles.logo} source={assets('logo')} />
+      <Image style={styles.logo} source={assets('main.logo')} />
     </Button>
   );
 }

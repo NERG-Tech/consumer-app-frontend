@@ -5,11 +5,12 @@ import {useAssets} from '../../../hooks/useAssets';
 import {Button} from '../buttons';
 import DefaultTheme from '../../../common/theme';
 
-export const DIRECTION = {
+export const POSITION = {
   LEFT: 'left',
   RIGHT: 'right',
   UP: 'up',
   DOWN: 'down',
+  CLOSE: 'close',
 } as const;
 
 const styles = StyleSheet.create({
@@ -22,28 +23,24 @@ const styles = StyleSheet.create({
   right: {
     marginRight: RFValue(20),
   },
-  email: {
-    width: 20,
-    resizeMode: 'contain',
-  },
 });
 
 interface PropsI {
   navigation: any;
-  icon: 'left' | 'right' | 'down';
-  positoin?: 'left' | 'right';
+  icon: 'left' | 'right' | 'down' | 'close';
+  position?: 'left' | 'right';
 }
 
-export function GoBack({navigation, icon, positoin = DIRECTION.LEFT}: PropsI) {
+export function GoBack({navigation, icon, position = POSITION.LEFT}: PropsI) {
   const assets = useAssets;
   return (
     <Button
       customStyle={StyleSheet.flatten([
         styles.container,
-        positoin === DIRECTION.LEFT ? styles.left : styles.right,
+        position === POSITION.LEFT ? styles.left : styles.right,
       ])}
       onPress={() => navigation.goBack()}>
-      <Image style={DefaultTheme.headerCircleArrow} source={assets(`circle_${icon}`)} />
+      <Image style={DefaultTheme.headerCircleArrow} source={assets(`hoc.circle_${icon}`)} />
     </Button>
   );
 }

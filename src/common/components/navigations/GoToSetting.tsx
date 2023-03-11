@@ -23,7 +23,7 @@ export function GoToSetting({navigation}: PropsI) {
   const assets = useAssets;
   return (
     <Button customStyle={styles.container} onPress={() => navigation.navigate('settings')}>
-      <Image style={styles.setting} source={assets('setting')} />
+      <Image style={styles.setting} source={assets('main.setting')} />
     </Button>
   );
 }

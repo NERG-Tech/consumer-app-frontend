@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {View, TextInput, StyleSheet, ViewStyle, TextStyle} from 'react-native';
+import React from 'react';
+import {View, Image, TextInput, StyleSheet, ViewStyle, TextStyle} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
-import Icon from 'react-native-easy-icon';
 import {COLORS} from '../../constants/StyleConstants';
 import {Button} from '../buttons';
+import {useAssets} from '../../../hooks/useAssets';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,14 +18,20 @@ const styles = StyleSheet.create({
     color: COLORS.TEXT_GREY_LIGHT,
     backgroundColor: COLORS.TRANSPARENT,
   },
-  eyeBtn: {
+  searchBtn: {
     marginRight: RFValue(16),
+  },
+  searchIcon: {
+    width: RFValue(30),
+    height: RFValue(30),
+    resizeMode: 'contain',
   },
 });
 
 interface PropsI {
   value: string;
   onChangeText: (text: string) => void;
+  onSearch: (searchQuery: string) => void;
   placeholder?: string;
   customStyle?: ViewStyle;
   textStyle?: TextStyle;
@@ -33,59 +39,32 @@ interface PropsI {
   placeholderTextColor?: string;
 }
 
-export function PasswordInput({
+export function SearchInput({
   value,
   onChangeText,
+  onSearch,
   placeholder,
   customStyle,
   textStyle,
   selectionColor,
   placeholderTextColor,
 }: PropsI) {
-  const [isFocused, setIsFocused] = useState(false);
-  const [isPasswordVisible, setPasswordVisible] = useState(true);
-
-  useEffect(() => {
-    if (!isFocused) {
-      setPasswordVisible(true);
-    }
-  }, [isFocused]);
-
-  const handleInputFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleInputBlur = () => {
-    setIsFocused(false);
-  };
-
-  const handlePasswordVisibilityChange = () => {
-    setPasswordVisible(prevState => !prevState);
-  };
-
+  const assets = useAssets;
   return (
     <View style={StyleSheet.flatten([styles.container, customStyle])}>
       <TextInput
         value={value}
         placeholder={placeholder}
         onChangeText={onChangeText}
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
         autoCorrect={false}
         autoCapitalize="none"
-        secureTextEntry={isPasswordVisible}
         selectionColor={selectionColor || COLORS.TEXT_GREY}
         placeholderTextColor={placeholderTextColor || COLORS.TEXT_GREY_LIGHT}
         style={StyleSheet.flatten([styles.input, textStyle])}
       />
       {!!value && (
-        <Button customStyle={styles.eyeBtn} onPress={handlePasswordVisibilityChange}>
-          <Icon
-            type="feather"
-            name={isPasswordVisible ? 'eye' : 'eye-off'}
-            color={COLORS.TEXT_GREY_LIGHT}
-            size={RFValue(16)}
-          />
+        <Button customStyle={styles.searchBtn} onPress={() => onSearch(value)}>
+          <Image source={assets('hoc.search_fill')} style={styles.searchIcon} />
         </Button>
       )}
     </View>

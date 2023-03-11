@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useRef} from 'react';
 import {View, Text, StyleSheet, ViewStyle, TextStyle, TouchableOpacity, Modal} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../constants/StyleConstants';

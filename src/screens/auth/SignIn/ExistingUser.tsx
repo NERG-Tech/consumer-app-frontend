@@ -133,7 +133,7 @@ function ExistingUserScreen() {
       </Button>
       <View style={styles.connectBtnWrapper}>
         <RoundedGradientButton
-          label={t('app.connect')}
+          label={t('app.connect') as string}
           loading={loading}
           onPress={handleSignIn}
           startColor={COLORS.BLUE}
