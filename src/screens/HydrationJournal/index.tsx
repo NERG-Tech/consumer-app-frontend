@@ -2,10 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../common/constants/StyleConstants';
 import {AttributeInput, Button, RectButton, CircularProgressBar} from '../../common/components';
 import {useAssets} from '../../hooks/useAssets';
@@ -78,9 +75,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   saveBtnWrapper: {
-    position: 'absolute',
     alignSelf: 'center',
-    bottom: hp(6),
+    marginTop: RFValue(50),
   },
   saveBtn: {
     width: RFValue(150),
