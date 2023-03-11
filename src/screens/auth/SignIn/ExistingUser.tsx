@@ -125,15 +125,15 @@ function ExistingUserScreen() {
         <Text style={styles.rememberText}>{t('app.remember')}</Text>
         <View style={styles.rememberCheckWrapper}>
           {isRemember ? (
-            <Image style={styles.rememberCheck} source={assets('check_active')} />
+            <Image style={styles.rememberCheck} source={assets('hoc.check_active')} />
           ) : (
-            <Image style={styles.rememberCheck} source={assets('check_normal')} />
+            <Image style={styles.rememberCheck} source={assets('hoc.check_normal')} />
           )}
         </View>
       </Button>
       <View style={styles.connectBtnWrapper}>
         <RoundedGradientButton
-          label={t('app.connect')}
+          label={t('app.connect') as string}
           loading={loading}
           onPress={handleSignIn}
           startColor={COLORS.BLUE}

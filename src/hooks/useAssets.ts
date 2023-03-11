@@ -11,8 +11,11 @@ const CheckActive = require('../assets/img/hoc/check_active.png');
 const CircleLeft = require('../assets/img/hoc/circle_left.png');
 const CircleRight = require('../assets/img/hoc/circle_right.png');
 const CircleDown = require('../assets/img/hoc/circle_down.png');
+const CircleClose = require('../assets/img/hoc/circle_close.png');
 const CircleDropRight = require('../assets/img/hoc/circle_drop_right.png');
 const CircleDropDown = require('../assets/img/hoc/circle_dropdown.png');
+
+const Search = require('../assets/img/hoc/search.png');
 
 const HomeActiveTab = require('../assets/img/tabs/home_active.png');
 const HomeNormalTab = require('../assets/img/tabs/home_normal.png');
@@ -28,21 +31,94 @@ const LungsImage = require('../assets/img/lungs.png');
 const ArrowUpImage = require('../assets/img/arrow_up.png');
 const AddListImage = require('../assets/img/list_add.png');
 const ShareImage = require('../assets/img/share.png');
+const TimerImage = require('../assets/img/timer.png');
+const HeartPulseImage = require('../assets/img/heart_pulse.png');
+const MentalHealthImage = require('../assets/img/mental_health.png');
+const BubbleImage = require('../assets/img/bubble.png');
+const MealImage = require('../assets/img/meal.png');
+const WalkImage = require('../assets/img/walk.png');
+const ChartImage = require('../assets/img/chart.png');
 
 export function useAssets(type: string) {
-  switch (type) {
-    case 'background':
-      return Background;
-    case 'logo':
-      return Logo;
-    case 'watch_logo':
-      return WatchLogo;
+  const route = type.split('.');
+  switch (route[0]) {
+    case 'main':
+      return mainAssets(route[1]);
+    case 'hoc':
+      return hocAssets(route[1]);
+    case 'global':
+      return globalAssets(route[1]);
+    default:
+      return null;
+  }
+}
+
+function hocAssets(path: string) {
+  switch (path) {
     case 'check_empty':
       return CheckEmpty;
     case 'check_normal':
       return CheckNormal;
     case 'check_active':
       return CheckActive;
+    case 'circle_left':
+      return CircleLeft;
+    case 'circle_right':
+      return CircleRight;
+    case 'circle_down':
+      return CircleDown;
+    case 'circle_close':
+      return CircleClose;
+    case 'circle_drop_right':
+      return CircleDropRight;
+    case 'circle_drop_down':
+      return CircleDropDown;
+    case 'search':
+      return Search;
+    default:
+      return null;
+  }
+}
+
+function globalAssets(path: string) {
+  switch (path) {
+    case 'lungs':
+      return LungsImage;
+    case 'arrow_up':
+      return ArrowUpImage;
+    case 'player':
+      return DefaultPlayer;
+    case 'list_add':
+      return AddListImage;
+    case 'share':
+      return ShareImage;
+    case 'timer':
+      return TimerImage;
+    case 'heart_pulse':
+      return HeartPulseImage;
+    case 'mental_health':
+      return MentalHealthImage;
+    case 'bubble':
+      return BubbleImage;
+    case 'meal':
+      return MealImage;
+    case 'walk':
+      return WalkImage;
+    case 'chart':
+      return ChartImage;
+    default:
+      return null;
+  }
+}
+
+function mainAssets(path: string) {
+  switch (path) {
+    case 'background':
+      return Background;
+    case 'logo':
+      return Logo;
+    case 'watch_logo':
+      return WatchLogo;
     case 'home_active_tab':
       return HomeActiveTab;
     case 'home_normal_tab':
@@ -63,26 +139,6 @@ export function useAssets(type: string) {
       return Email;
     case 'setting':
       return Setting;
-    case 'circle_left':
-      return CircleLeft;
-    case 'circle_right':
-      return CircleRight;
-    case 'circle_down':
-      return CircleDown;
-    case 'circle_drop_right':
-      return CircleDropRight;
-    case 'circle_drop_down':
-      return CircleDropDown;
-    case 'player':
-      return DefaultPlayer;
-    case 'lungs':
-      return LungsImage;
-    case 'arrow_up':
-      return ArrowUpImage;
-    case 'list_add':
-      return AddListImage;
-    case 'share':
-      return ShareImage;
     default:
       return null;
   }

@@ -23,7 +23,7 @@ export function GoToEmail({navigation}: PropsI) {
   const assets = useAssets;
   return (
     <Button customStyle={styles.container} onPress={() => navigation.navigate('notifications')}>
-      <Image style={styles.email} source={assets('e-mail')} />
+      <Image style={styles.email} source={assets('main.e-mail')} />
     </Button>
   );
 }

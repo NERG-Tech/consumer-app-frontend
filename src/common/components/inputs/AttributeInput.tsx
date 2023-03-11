@@ -45,6 +45,7 @@ interface PropsI {
   value: string;
   onChangeText?: (text: string) => void;
   keyboardType?: KeyboardTypeOptions | undefined;
+  readOnly?: boolean;
   selectionColor?: string;
   placeholder?: string;
   placeholderTextColor?: string;
@@ -58,6 +59,7 @@ export function AttributeInput({
   value,
   onChangeText,
   keyboardType,
+  readOnly,
   placeholder,
   placeholderTextColor,
   selectionColor,
@@ -75,6 +77,7 @@ export function AttributeInput({
         keyboardType={keyboardType}
         autoCorrect={false}
         autoCapitalize="none"
+        editable={!readOnly}
         selectionColor={selectionColor || COLORS.TEXT_GREY}
         placeholderTextColor={placeholderTextColor || COLORS.TEXT_GREY_LIGHT}
         style={StyleSheet.flatten([styles.input, textStyle])}

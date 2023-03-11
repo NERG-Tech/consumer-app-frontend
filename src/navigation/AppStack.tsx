@@ -1,21 +1,43 @@
 import React from 'react';
 import {RouteProp} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 import type {StackNavigationProp} from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import {useTranslation} from 'react-i18next';
-import {HOME, SETTINGS, NOTIFICATIONS} from '../common/constants/NavigationConstants';
-import {HeaderLogo, GoToEmail, GoToSetting, GoBack, DIRECTION} from '../common/components';
+import {
+  ACTIVITY_JOURNAL,
+  FOOD_JOURNAL,
+  HOME,
+  HYDRATION_JOURNAL,
+  MEASUREMENTS,
+  NOTIFICATIONS,
+  PRODUCT_SEARCH,
+  REST_JOURNAL,
+  SETTINGS,
+} from '../common/constants/NavigationConstants';
+import {GoBack, GoToEmail, GoToSetting, HeaderLogo, POSITION} from '../common/components';
 import DefaultTheme from '../common/theme';
 import {DefaultHeaderOptions} from '../common/theme/Navigation';
 
 import {TabStack} from './TabStack';
 import SettingScreen from '../screens/Setting';
 import NotificationScreen from '../screens/Notification';
+import HydrationJournalScreen from '../screens/HydrationJournal';
+import FoodJournalScreen from '../screens/FoodJournal';
+import RestJournalScreen from '../screens/RestJournal';
+import ActivityJournalScreen from '../screens/ActivityJournal';
+import ProductSearchScreen from '../screens/ProductSearch';
+import MeasurementsScreen from '../screens/Measurements';
 
 export type AppStackParamList = {
   [HOME]: undefined;
   [SETTINGS]: undefined;
   [NOTIFICATIONS]: undefined;
+  [MEASUREMENTS]: undefined;
+  [HYDRATION_JOURNAL]: undefined;
+  [REST_JOURNAL]: undefined;
+  [FOOD_JOURNAL]: undefined;
+  [ACTIVITY_JOURNAL]: undefined;
+  [PRODUCT_SEARCH]: undefined;
 };
 
 export type AppStackNavigationProp<RouteName extends keyof AppStackParamList> = StackNavigationProp<
@@ -50,6 +72,18 @@ export function AppStack() {
         })}
       />
       <Screen
+        name={MEASUREMENTS}
+        component={MeasurementsScreen}
+        options={({navigation}) => ({
+          ...DefaultHeaderOptions,
+          title: t('navigation.measurements') as string,
+          headerLeft: () => null,
+          headerRight: () => (
+            <GoBack navigation={navigation} icon={POSITION.CLOSE} position={POSITION.RIGHT} />
+          ),
+        })}
+      />
+      <Screen
         name={SETTINGS}
         component={SettingScreen}
         options={({navigation}) => ({
@@ -57,7 +91,7 @@ export function AppStack() {
           title: t('navigation.settings') as string,
           headerLeft: () => null,
           headerRight: () => (
-            <GoBack navigation={navigation} icon={DIRECTION.RIGHT} positoin={DIRECTION.RIGHT} />
+            <GoBack navigation={navigation} icon={POSITION.RIGHT} position={POSITION.RIGHT} />
           ),
         })}
       />
@@ -68,7 +102,66 @@ export function AppStack() {
           ...DefaultHeaderOptions,
           title: t('navigation.notifications') as string,
           headerLeft: () => (
-            <GoBack navigation={navigation} icon={DIRECTION.LEFT} positoin={DIRECTION.LEFT} />
+            <GoBack navigation={navigation} icon={POSITION.LEFT} position={POSITION.LEFT} />
+          ),
+        })}
+      />
+      <Screen
+        name={HYDRATION_JOURNAL}
+        component={HydrationJournalScreen}
+        options={({navigation}) => ({
+          ...DefaultHeaderOptions,
+          title: t('navigation.hj') as string,
+          headerLeft: () => null,
+          headerRight: () => (
+            <GoBack navigation={navigation} icon={POSITION.CLOSE} position={POSITION.RIGHT} />
+          ),
+        })}
+      />
+      <Screen
+        name={REST_JOURNAL}
+        component={RestJournalScreen}
+        options={({navigation}) => ({
+          ...DefaultHeaderOptions,
+          title: t('navigation.rj') as string,
+          headerLeft: () => null,
+          headerRight: () => (
+            <GoBack navigation={navigation} icon={POSITION.CLOSE} position={POSITION.RIGHT} />
+          ),
+        })}
+      />
+      <Screen
+        name={FOOD_JOURNAL}
+        component={FoodJournalScreen}
+        options={({navigation}) => ({
+          ...DefaultHeaderOptions,
+          title: t('navigation.fj') as string,
+          headerLeft: () => (
+            <GoBack navigation={navigation} icon={POSITION.LEFT} position={POSITION.LEFT} />
+          ),
+        })}
+      />
+      <Screen
+        name={ACTIVITY_JOURNAL}
+        component={ActivityJournalScreen}
+        options={({navigation}) => ({
+          ...DefaultHeaderOptions,
+          title: t('navigation.aj') as string,
+          headerLeft: () => null,
+          headerRight: () => (
+            <GoBack navigation={navigation} icon={POSITION.CLOSE} position={POSITION.RIGHT} />
+          ),
+        })}
+      />
+      <Screen
+        name={PRODUCT_SEARCH}
+        component={ProductSearchScreen}
+        options={({navigation}) => ({
+          ...DefaultHeaderOptions,
+          title: t('navigation.fj') as string,
+          headerLeft: () => null,
+          headerRight: () => (
+            <GoBack navigation={navigation} icon={POSITION.CLOSE} position={POSITION.RIGHT} />
           ),
         })}
       />

@@ -8,13 +8,16 @@ export const FORGOT_PASSWORD = 'forgot_password';
 export const HOME_SCREEN = 'home_screen';
 export const SHARE_SCREEN = 'share_screen';
 export const FOCUS_SCREEN = 'focus_screen';
+export const GROUP_SCREEN = 'focus_screen';
 
 // MAIN NAVIGATOR
 export const HEALTH = 'health';
 export const SETTINGS = 'settings';
 export const NOTIFICATIONS = 'notifications';
+export const MEASUREMENTS = 'measurements';
 export const FOOD_JOURNAL = 'food_journal';
 export const REST_JOURNAL = 'rest_journal';
+export const ACTIVITY_JOURNAL = 'activity_journal';
 export const HYDRATION_JOURNAL = 'hydration_journal';
 export const PRODUCT_SEARCH = 'product_search';
 export const AUTO_MONITOR_HEALTH = 'auto_monitor_health';

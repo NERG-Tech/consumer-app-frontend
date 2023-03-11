@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, TextInput, StyleSheet, ViewStyle, TextStyle} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import Icon from 'react-native-easy-icon';
-import {COLORS} from '../../../common/constants/StyleConstants';
+import {COLORS} from '../../constants/StyleConstants';
 import {Button} from '../buttons';
 
 const styles = StyleSheet.create({

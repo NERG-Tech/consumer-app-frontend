@@ -2,12 +2,12 @@ import React from 'react';
 import {RouteProp} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import type {StackNavigationProp} from '@react-navigation/stack';
-import {GROUP_TAB} from '../common/constants/NavigationConstants';
+import {GROUP_SCREEN} from '../common/constants/NavigationConstants';
 
 import GroupScreen from '../screens/Group';
 
 export type GroupStackParamList = {
-  [GROUP_TAB]: undefined;
+  [GROUP_SCREEN]: undefined;
 };
 
 export type GroupStackNavigationProp<RouteName extends keyof GroupStackParamList> =
@@ -25,8 +25,8 @@ const {Screen, Navigator} = createStackNavigator<GroupStackParamList>();
 
 export function GroupStack() {
   return (
-    <Navigator screenOptions={{headerShown: false}} initialRouteName={GROUP_TAB}>
-      <Screen name={GROUP_TAB} component={GroupScreen} />
+    <Navigator screenOptions={{headerShown: false}} initialRouteName={GROUP_SCREEN}>
+      <Screen name={GROUP_SCREEN} component={GroupScreen} />
     </Navigator>
   );
 }

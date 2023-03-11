@@ -46,9 +46,9 @@ export function CheckItemList({selectedValue, options, onSelectItem}: PropsI) {
           onPress={() => onSelectItem(item, options[item])}>
           <Text style={styles.text}>{options[item]}</Text>
           {selectedValue === item ? (
-            <Image style={styles.checkImage} source={assets('check_active')} />
+            <Image style={styles.checkImage} source={assets('hoc.check_active')} />
           ) : (
-            <Image style={styles.checkImage} source={assets('check_empty')} />
+            <Image style={styles.checkImage} source={assets('hoc.check_empty')} />
           )}
         </Button>
       ))}

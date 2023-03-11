@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     width: wp(60),
     resizeMode: 'contain',
   },
-  stasticText: {
+  staticText: {
     fontSize: FONT_SIZE.L,
     fontWeight: FONT_WEIGHT.LIGHT,
     color: COLORS.BLACK,
@@ -71,12 +71,12 @@ function WelcomeScreen() {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={assets('background')} style={styles.backgroundImg}>
-        <Image style={styles.logo} source={assets('logo')} />
-        <Text style={styles.stasticText}>Outperform your genetics.</Text>
-        <Image style={styles.watchLogo} source={assets('watch_logo')} />
+      <ImageBackground source={assets('main.background')} style={styles.backgroundImg}>
+        <Image style={styles.logo} source={assets('main.logo')} />
+        <Text style={styles.staticText}>Outperform your genetics.</Text>
+        <Image style={styles.watchLogo} source={assets('main.watch_logo')} />
         <RoundedGradientButton
-          label={t('app.signIn')}
+          label={t('app.signIn') as string}
           onPress={() => navigation.navigate(SIGN_IN)}
           startColor={COLORS.BLUE}
           endColor={COLORS.BLACK}

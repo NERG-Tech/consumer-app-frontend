@@ -1,5 +1,5 @@
 import React from 'react';
-import {ActivityIndicator, Text, StyleSheet, ViewStyle, TextStyle} from 'react-native';
+import {ActivityIndicator, Text, View, StyleSheet, ViewStyle, TextStyle} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../constants/StyleConstants';
@@ -32,16 +32,19 @@ const styles = StyleSheet.create({
 });
 
 interface PropsI extends RectButtonProps {
-  label: string;
+  children?: any;
+  label?: string | undefined;
   startColor: string;
   endColor: string;
   loading?: boolean;
   enabled?: boolean;
   customStyle?: ViewStyle;
+  buttonStyle?: ViewStyle;
   textStyle?: TextStyle;
 }
 
 export function RoundedGradientButton({
+  children,
   label,
   startColor,
   endColor,
@@ -49,6 +52,7 @@ export function RoundedGradientButton({
   enabled = true,
   loading = false,
   customStyle,
+  buttonStyle,
   textStyle,
 }: PropsI) {
   return (
@@ -61,10 +65,14 @@ export function RoundedGradientButton({
         customStyle,
         {opacity: enabled === false || loading === true ? 0.5 : 1},
       ])}>
-      <RectButton customStyle={styles.button} onPress={onPress}>
-        <Text style={StyleSheet.flatten([styles.text, textStyle])}>
-          {loading ? <ActivityIndicator color={COLORS.SHAPE} /> : label}
-        </Text>
+      <RectButton customStyle={StyleSheet.flatten([styles.button, buttonStyle])} onPress={onPress}>
+        {loading ? (
+          <ActivityIndicator color={COLORS.SHAPE} />
+        ) : children ? (
+          <View style={{flex: 0}}>{children}</View>
+        ) : (
+          <Text style={StyleSheet.flatten([styles.text, textStyle])}>{label}</Text>
+        )}
       </RectButton>
     </LinearGradient>
   );
