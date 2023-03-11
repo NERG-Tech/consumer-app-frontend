@@ -1,11 +1,22 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {Text, Image, View, ScrollView, StyleSheet} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import {RFValue} from 'react-native-responsive-fontsize';
+import {AppStackParamList} from '../../navigation/AppStack';
+import {
+  HYDRATION_JOURNAL,
+  FOOD_JOURNAL,
+  REST_JOURNAL,
+  ACTIVITY_JOURNAL,
+} from '../../common/constants/NavigationConstants';
 import {Button} from '../../common/components';
 import {COLORS, FONT_SIZE, FONT_WEIGHT} from '../../common/constants/StyleConstants';
 import {useAssets} from '../../hooks/useAssets';
 
 import {DailyTargets, WeeklyProgress} from './sections';
+
+type HomeScreenNavigationProp = StackNavigationProp<AppStackParamList, 'home'>;
 
 const tabs = {
   dailyTargets: 'Daily Targets',
@@ -82,7 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: RFValue(20),
     marginTop: RFValue(20),
-    marginBottom: RFValue(16),
+    marginBottom: RFValue(3),
   },
   tabWrapper: {
     flex: 1,
@@ -124,6 +135,7 @@ function HomeScreen() {
   const [activeTab, setActiveTab] = useState('dailyTargets');
   const scrollRef = useRef<ScrollView>(null);
   const assets = useAssets;
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
   useEffect(() => gotoScrollViewTop(), [activeTab]);
 
@@ -132,6 +144,25 @@ function HomeScreen() {
       y: 0,
       animated: true,
     });
+  };
+
+  const gotoJournalScreens = (type: string) => {
+    switch (type) {
+      case 'hydration':
+        navigation.navigate(HYDRATION_JOURNAL);
+        break;
+      case 'food':
+        navigation.navigate(FOOD_JOURNAL);
+        break;
+      case 'activity':
+        navigation.navigate(ACTIVITY_JOURNAL);
+        break;
+      case 'rest':
+        navigation.navigate(REST_JOURNAL);
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -166,7 +197,11 @@ function HomeScreen() {
         ref={scrollRef}
         style={styles.scrollViewContainer}
         showsVerticalScrollIndicator={false}>
-        {activeTab === 'dailyTargets' ? <DailyTargets /> : <WeeklyProgress />}
+        {activeTab === 'dailyTargets' ? (
+          <DailyTargets gotoJournalScreen={(type: string) => gotoJournalScreens(type)} />
+        ) : (
+          <WeeklyProgress />
+        )}
       </ScrollView>
     </View>
   );

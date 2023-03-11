@@ -16,6 +16,7 @@ export const SETTINGS = 'settings';
 export const NOTIFICATIONS = 'notifications';
 export const FOOD_JOURNAL = 'food_journal';
 export const REST_JOURNAL = 'rest_journal';
+export const ACTIVITY_JOURNAL = 'activity_journal';
 export const HYDRATION_JOURNAL = 'hydration_journal';
 export const PRODUCT_SEARCH = 'product_search';
 export const AUTO_MONITOR_HEALTH = 'auto_monitor_health';

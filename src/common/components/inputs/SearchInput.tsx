@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     marginRight: RFValue(16),
   },
   searchIcon: {
-    width: RFValue(30),
-    height: RFValue(30),
+    width: RFValue(20),
+    height: RFValue(20),
     resizeMode: 'contain',
   },
 });

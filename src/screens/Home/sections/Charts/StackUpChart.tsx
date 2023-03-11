@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   chartTopTitle: {
     flex: 1,
     fontSize: FONT_SIZE.MD,
-    fontWeight: FONT_WEIGHT.LIGHT,
+    fontWeight: FONT_WEIGHT.MIDDLE,
     color: COLORS.TEXT_DARK,
   },
   linkWrapper: {
